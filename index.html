@@ -82,7 +82,7 @@
   <div class="container-xxl">
     <nav class="navbar navbar-expand-lg navbar-dark p-2">
       <!-- Nav Toggle Button -->
-      <img src="img/logo.png" class="img-fluid d-flex d-lg-none" width="75 ">
+      <img src="img/logo.png" class="img-fluid d-flex d-lg-none" width="75">
       <button class="navbar-toggler small rounded-3 border-0 bg-primary" type="button" data-bs-toggle="collapse"
         data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
         <div class="hamburger-toggle">
@@ -304,21 +304,21 @@
 
             <!-- Mega Menu -->
             <div class="dropdown-menu mega-menu p-3 border-0 rounded-top-0" style="margin-top: -10px;">
-              <ul id="myDIV" class="nav nav-tabs my-2">
+              <ul id="myDIV2" class="nav nav-tabs my-2">
                 <li class="nav-item">
-                  <a onclick="first()" class="nav-link active text-body user-select-none" aria-current="page">Baking and
+                  <a onclick="first2()" class="nav-link active text-body user-select-none" aria-current="page">Baking and
                     steam
                     cooking</a>
                 </li>
                 <li class="nav-item">
-                  <a onclick="second()" class="nav-link user-select-none">Hobs and CombiSets</a>
+                  <a onclick="second2()" class="nav-link user-select-none">Hobs and CombiSets</a>
                 </li>
                 <li class="nav-item">
-                  <a onclick="third()" class="nav-link user-select-none">Cooker hoods</a>
+                  <a onclick="third2()" class="nav-link user-select-none">Cooker hoods</a>
                 </li>
               </ul>
 
-              <div id="first">
+              <div id="first2">
                 <div class="d-flex">
                   <div class="col-12 col-lg-6">
                     <div class="mx-5 my-2">
@@ -374,7 +374,7 @@
                   </div>
                 </div>
               </div>
-              <div id="second" class="d-none">
+              <div id="second2" class="d-none">
                 <div class="d-flex">
                   <div class="col-12 col-lg-6">
                     <div class="mx-5 my-2">
@@ -430,7 +430,7 @@
                   </div>
                 </div>
               </div>
-              <div class="d-none" id="third">
+              <div class="d-none" id="third2">
                 <div class="d-flex">
                   <div class="col-12 col-lg-6">
                     <div class="mx-5 my-2">
@@ -765,13 +765,25 @@
 </script>
 
 
-
 <script>
   // active
   var header = document.getElementById("myDIV");
   var btns = header.getElementsByClassName("nav-link");
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active text-body");
+      current[0].className = current[0].className.replace(" active text-body", "");
+      this.className += " active text-body";
+    });
+  }
+
+</script>
+<script>
+  // active
+  var header2 = document.getElementById("myDIV2");
+  var btns2 = header2.getElementsByClassName("nav-link");
+  for (var i = 0; i < btns2.length; i++) {
+    btns2[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active text-body");
       current[0].className = current[0].className.replace(" active text-body", "");
       this.className += " active text-body";
@@ -805,6 +817,35 @@
     var element = document.getElementById("first");
     element.classList.add("d-none");
     var element = document.getElementById("second");
+    element.classList.add("d-none");
+  }
+
+</script>
+<script>
+  function first2() {
+    var element = document.getElementById("third2");
+    element.classList.add("d-none");
+    var element = document.getElementById("second2");
+    element.classList.add("d-none");
+    var element = document.getElementById("first2");
+    element.classList.remove("d-none");
+  }
+
+  function second2() {
+    var element = document.getElementById("third2");
+    element.classList.add("d-none");
+    var element = document.getElementById("first2");
+    element.classList.add("d-none");
+    var element = document.getElementById("second2");
+    element.classList.remove("d-none");
+  }
+
+  function third2() {
+    var element = document.getElementById("third2");
+    element.classList.remove("d-none");
+    var element = document.getElementById("first2");
+    element.classList.add("d-none");
+    var element = document.getElementById("second2");
     element.classList.add("d-none");
   }
 
